@@ -1,0 +1,234 @@
+:root {
+    --primary: #1a56db;
+    --secondary: #0e2e7c;
+    --light: #f3f7ff;
+    --dark: #1e293b;
+    --accent: #f97316;
+    --success: #10b981;
+    --text: #1e293b;
+    --text-light: #64748b;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+main {
+    padding: 40px 0;
+}
+
+.section {
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+h2 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+}
+
+h2 i {
+    margin-right: 12px;
+    color: var(--accent);
+}
+
+.guidelines {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.guideline-item {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.guideline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary);
+    border-radius: 50%;
+}
+
+.guideline-subitem {
+    margin-left: 25px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.guideline-subitem::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+}
+
+.trl-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.important-note {
+    background-color: #ffedd5;
+    border-left: 4px solid var(--accent);
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.important-note h3 {
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.important-note h3 i {
+    margin-right: 10px;
+}
+
+.help-box {
+    background-color: var(--light);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.help-box:hover {
+    transform: translateY(-5px);
+}
+
+.help-box h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.help-box p {
+    margin-bottom: 15px;
+}
+#section6{
+    margin-top: 20px;
+}
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary);
+}
+
+/* Tooltip styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: var(--dark);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.9rem;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .section {
+        padding: 20px;
+    }
+}
+.bt button{
+    background-color: #16336D;
+    border: none;
+    color: #f5f5f5;
+    padding: 15px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 5px 5px 8px gray;
+    transition: transform 0.3s ease-in-out;
+}
+.bt button:hover{
+    transform: scale(1.1);
+    border: solid 2px greenyellow;
+}

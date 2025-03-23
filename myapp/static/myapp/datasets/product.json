@@ -1,0 +1,51 @@
+[
+    {
+        "pg":"1",
+        "title":"Hydrogen Burner for Industrial Metal Melting Furnaces",
+        "content":"The innovative element is to use hydrogen as fuel in furnaces burners. Advanced combustor technologies were employed in diffusive hydrogen jet mixing and burning techniques and in  addition advanced heat transfer augmentation techniques were also applied.",
+        "company":"Vesrad Technologies Pvt Ltd ",
+        "image":"tbi-slide.jpg"
+    },
+    {
+        "pg":"2",
+        "title":"Smart Electrical Tractor",
+        "content":"Smart Electrical Tractor is equipped with class 4 autonomous system which can act as wing man for repeated cultivation job, with electricity as the propulsion system reducing the cost of operation and carbon foot print, with IoT connected system paves the way for rental exposure on equipment‟s and tractor using connecting vehicle system featuring with the USB of expandable track width system, charge time of 5 Min to 80% and runtime of about 8Hrs.",
+        "company":"HarvTech LLP",
+        "image":"tbi-slide1.jpg"
+    },
+    {
+        "pg":"3",
+        "title":"IOT Based Smart Power Looms",
+        "content":"A Retrofit device which gives continuous alerts about the ON and OFF time of every loom through IoT. In addition the owner can change the design settings, current input of the loom locating anywhere through app. Reduces the time consumption and increases the productivity & profitability. ",
+        "company":"GSR Tech Solutions",
+        "image":"tbi-slide2.jpg"
+    },
+    {
+        "pg":"4",
+        "title":"Solar Powered Pedal Assisted Three Wheeler",
+        "content":"Solar powered pedal assisted three wheeler for mobility solution. The vehicle is meant to be charged by onboard solar panels, resulting in a sustainable mode of transport. It further contributes to net zero carbon goals in mobility and energy.",
+        "company":"Vesrad Technologies Pvt Ltd ",
+        "image":"tbi-slide3.jpg"
+    },
+    {
+        "pg":"5",
+        "title":"Cassava Harvester (Tractor PTO Attachable)",
+        "content":"The basic idea is to replicate the manual harvesting process into machine assisted harvesting process. The design setup is divided in to two major parts; one is the mechanical setup involving the transmission system to power the harvesting stage and designing the harvesting system.",
+        "company":"MN Vesthar Farm Tech ",
+        "image":"tbi-slide4.jpg"
+    },
+    {
+        "pg":"6",
+        "title":"Quadmastest",
+        "content":"A reagent/chemical device for very early detection of subclinical mastitis in cattle.Reduces milk loss by 50% to 80%. Prevents spread of infection to the whole herd. Prevents contamination of the pooled milk.  Increases Shelf life of the milk. Reduces treatment cost ranging from INR 7000 to INR 35000 per cow. Reduces dependence on veterinarian or Para veterinarian for diagnosis.",
+        "company":"ChimerTech Pvt. Ltd",
+        "image":"tbi-slide5.jpg"
+    },
+    {
+        "pg":"7",
+        "title":"SOLO mPowerDrive (A power-assist device for manual wheelchair) ",
+        "content":"Wheelchair power assist device to convert any normal wheelchair into power wheelchair which can eventually help the user to travel independently without any assistance.",
+        "company":"Tecyon Innovations",
+        "image":"tbi-slide6.jpg"
+    }
+]

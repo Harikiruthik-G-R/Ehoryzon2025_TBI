@@ -1,0 +1,402 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEC@TBI</title>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/index.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/footer.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/incubator/mentor.css" %}'>
+    <script src="https://kit.fontawesome.com/628c8d2499.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="logo" onclick="redirhome()">
+        <img src="{% static 'myapp/TBI_LOGO.png' %}" style="width: 100%;height:150px">
+    </div>
+    <nav id="menu">
+        <div class="menu-item">
+            <div class="menu-text">
+                <a href="#">Products</a>
+            </div>
+            <div class="sub-menu" style="height: -10px;">
+                <div class="icon-box"  onclick="redirproducts()">
+                    <div class="icon"><i class="fal fa-wind-turbine"></i></div>
+                    <div class="text">
+                        <div class="title">Products Developed / Commercialized <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div class="menu-item highlight">
+            <div class="menu-text">
+                <a href="#">About</a>
+            </div>
+            <div class="sub-menu double">
+                <div class="icon-box gb a" onclick="redirinc()">
+                    <div class="icon"><i class="far fa-question-circle"></i></div>
+                    <div class="text">
+                        <div class="title">Incubation <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">From Professionals</div>
+                    </div>
+                </div>
+                <div class="icon-box gb b" onclick="redirmen()">
+                    <div class="icon"><i class="far fa-users-class"></i></div>
+                    <div class="text">
+                        <div class="title">Mentorship <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">In Classroom</div>
+                    </div>
+                </div>
+                <div class="icon-box gb c">
+                    <div class="icon"><i class="far fa-school"></i></div>
+                    <div class="text">
+                        <div class="title">Infrastructure <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Work</div>
+                    </div>
+                </div>
+                <div class="icon-box gb d" onclick="redir()">
+                    <div class="icon"><i class="far fa-chess-rook"></i></div>
+                    <div class="text">
+                        <div class="title">Spark Fund<i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Funding</div>
+                    </div>
+                </div>
+                <div class="icon-box gb e">
+                    <div class="icon"><i class="far fa-video-plus"></i></div>
+                    <div class="text">
+                        <div class="title">Facilities <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">A Creator Environment</div>
+                    </div>
+                </div>
+                <div class="icon-box gb f">
+                    <div class="icon"><i class="fas fa-info-circle"></i></div>
+                    <div class="text">
+                        <div class="title">About <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Our Journey</div>
+                    </div>
+                </div>
+                <div class="bottom-container">
+                    Ready to dive in? <a href="#" style="margin-right: 80px;">Get Started</a>
+                    <a href="{% url 'home' %}">Home</a>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div class="menu-item highlight">
+            <div class="menu-text">
+                <a href="#">Services</a>
+            </div>
+            <div class="sub-menu triple">
+                <div class="top-container gb c icon-box">
+                    <div class="icon big"><i class="far fa-book"></i></div>
+                    <div class="text">
+                        <div class="title">Where to start</div>
+                        <div class="sub-text">Find out where to begin below</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3>Pre services</h3>
+                    <a href="#">Business Planning and Developmen</a>
+                    <a href="#">Engineering & Design</a>
+                    <a href="#">Testing,Prototype</a>
+                    <a href="#">Packaging of the Concept </a>
+                </div>
+                <div class="box">
+                    <h3>Post Services</h3>
+                    <a href="#">Marketing and Legal Assistance</a>
+                    <a href="#">Assistance for Licences</a>
+                    <a href="#">IPR related issues</a>
+                    <a href="#">Post-incubation services</a>
+                </div>
+                <div class="icon-box flat tp">
+                    <div class="icon"><i class="fal fa-plug"></i></div>
+                    <div class="text">
+                        <div class="title">Career Guide <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat tp">
+                    <div class="icon"><i class="fal fa-comments"></i></div>
+                    <div class="text">
+                        <div class="title">Support Line <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat">
+                    <div class="icon"><i class="fal fa-phone-volume"></i></div>
+                    <div class="text">
+                        <div class="title">Live Chat <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat">
+                    <div class="icon"><i class="fal fa-book-spells"></i></div>
+                    <div class="text">
+                        <div class="title">Documentation <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-text">
+                <a href="#">Community</a>
+            </div>
+            <div class="sub-menu">
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-linkedin"></i></div>
+                    <div class="text">
+                        <div class="title">LinkedIn<i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Join our passionate community.</div>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-twitter-square"></i></div>
+                    <div class="text">
+                        <div class="title">Twitter <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Follow us on twitter.</div>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-facebook-square"></i></i></div>
+                    <div class="text">
+                        <div class="title">Facebook <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">WFollow us on facebook.</div>
+                    </div>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div id="sub-menu-container">
+            <div id="sub-menu-holder">
+                <div id="sub-menu-bottom">
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section id ="tray">
+        hi
+    </section>
+    <main>
+        <div class="container">
+            <section class="section" id="about">
+                <h2 class="section-title">About Our Mentorship Program</h2>
+                
+                <div class="intro-flex">
+                    <div class="intro-text">
+                        <p>Technology business incubation at KEC is more than just providing space and facilities—it's about comprehensive mentorship that nurtures young entrepreneurs through their most vulnerable startup period. The TBI mentorship program at Kongu Engineering College is designed to accelerate the commercialization of R&D outputs and create additional avenues of employment.</p>
+                        
+                        <p>As a joint venture between Kongu Engineering College and the Department of Science and Technology, Government of India, our Rs.44 million project stands as the first of its kind in India. The mentorship initiative offers a golden opportunity for entrepreneur aspirants to convert their innovative ideas into tangible products in emerging technology areas with guidance from industry experts and academic professionals.</p>
+                    </div>
+                    
+                    <div class="intro-image">
+                        <img src="{% static 'myapp/images/mentorship.png' %}" alt="TBI KEC Mentorship Session">
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section" id="activities">
+                <h2 class="section-title">Key Mentorship Activities</h2>
+                
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <div class="activity-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="activity-title">Technology Enterprises</h3>
+                        <p class="activity-desc">Promoting new technology based enterprises through innovation support and incubation</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <div class="activity-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="activity-title">Entrepreneur Support</h3>
+                        <p class="activity-desc">Providing tailored services to new as well as existing entrepreneurs</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <div class="activity-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="activity-title">Commercialization</h3>
+                        <p class="activity-desc">Helping startups commercialize their developed technologies</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <div class="activity-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="activity-title">Business Basics</h3>
+                        <p class="activity-desc">Orientation towards business management and help in preparation of business plans</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <div class="activity-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="activity-title">Consultancy</h3>
+                        <p class="activity-desc">Technical, legal, and financial consulting services for startup growth</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <div class="activity-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3 class="activity-title">Technology Events</h3>
+                        <p class="activity-desc">Organizing technology shows, clinics, and trade fairs for networking</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <div class="activity-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="activity-title">Training & HRD</h3>
+                        <p class="activity-desc">Short-term courses on Human Resources Development for entrepreneurs</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <div class="activity-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="activity-title">IPR Support</h3>
+                        <p class="activity-desc">Technology support, quality assurance, marketing, and Intellectual Property Rights guidance</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <div class="activity-icon">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <h3 class="activity-title">Legal & Finance</h3>
+                        <p class="activity-desc">Assistance in arranging licenses, finance, clearances and legal help</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section" id="vision-mission">
+                <h2 class="section-title">Our Vision & Mission</h2>
+                
+                <div class="vision-mission">
+                    <div class="vision">
+                        <h3>
+                            <span class="vision-mission-icon"><i class="fas fa-eye"></i></span>
+                            Our Vision
+                        </h3>
+                        <ul class="vision-mission-list">
+                            <li>To create Entrepreneurs of world class quality in the areas of emerging technologies</li>
+                            <li>To cater to the needs of changing environment and contribute towards Nation's growth</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mission">
+                        <h3>
+                            <span class="vision-mission-icon"><i class="fas fa-flag"></i></span>
+                            Our Mission
+                        </h3>
+                        <ul class="vision-mission-list">
+                            <li>To provide congenial atmosphere with adequate infrastructure facilities for encouraging entrepreneurs to undertake business development in the emerging technologies.</li>
+                            <li>To provide the support service needed for sustainable growth of the newly developed entrepreneurs.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="conclusion">
+                    <p>The mentorship program at TBI KEC is dedicated to transforming innovative ideas into successful businesses through expert guidance, comprehensive support, and a nurturing ecosystem.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <section id="end">
+        <footer>
+            Maintained by TBI@KEC | Designed by CSE-B
+        </footer>
+    </section>
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate elements when they come into view
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.section-title, .activity-card, .vision, .mission, .conclusion');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition.top < windowHeight * 0.85) {
+                        if (element.classList.contains('activity-card')) {
+                            element.style.opacity = '1';
+                            element.style.transform = 'translateY(0)';
+                            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                        } else {
+                            element.style.opacity = '1';
+                            element.style.transform = 'translateY(0)';
+                            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                        }
+                    }
+                });
+            };
+            
+            // Initial check
+            animateOnScroll();
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', animateOnScroll);
+            
+            // Apply initial animations
+            const introFlex = document.querySelector('.intro-flex');
+            introFlex.style.opacity = '0';
+            introFlex.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                introFlex.style.opacity = '1';
+                introFlex.style.transform = 'translateY(0)';
+                introFlex.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            }, 300);
+            
+            // Activity card animations
+            const activityCards = document.querySelectorAll('.activity-card');
+            activityCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+            });
+        });
+        //redir 
+        function redir(){
+            window.location.href="{% url 'funds' %}";
+        }
+        function redirhome(){
+            window.location.href="{% url 'home' %}";
+        }
+        function redirinc(){
+            window.location.href="{% url 'incub' %}";
+        }
+        function redirmen(){
+            window.location.href="{% url 'mentor' %}";
+        }
+        function redirproducts(){
+            window.location.href="{% url 'product' %}";
+        }
+        //on scroll border nav
+        window.addEventListener("scroll", function () {
+            const nav = document.querySelector("nav");
+            
+            if (window.scrollY > 50) { // Adjust scroll threshold as needed
+                nav.classList.add("scrolled");
+            } else {
+                nav.classList.remove("scrolled");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+#main_2 {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    height: 500px;
+}
+
+#main_2.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+#main_2 #eventbar{
+    float: left;
+    background-image: url("../images/TBIENTRANCE.jpg");
+    background-size: contain;
+    height: 490px;
+    width: 250px;
+    margin-top: 0px;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(38, 89, 193, 0.5), rgba(38, 89, 193, 0.5)), url("../images/TBIENTRANCE.jpg");
+    background-size: contain, contain;
+    border-radius: 0px 20px 20px 0px;
+}
+
+#main2but {
+    font-size: 18px;
+    color: #e1e1e1;
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+  }
+  
+  #main2but:focus,
+  #main2but:hover {
+    color: #fff;
+  }
+  
+  #main2but:focus:after,
+  #main2but:hover:after {
+    width: 100%;
+    left: 0%;
+  }
+  
+  #main2but:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #16336d;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }
+.eb{
+    margin-top: -30px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+#stat {
+  background-color: #16336d;
+  height: 450px;
+  width: 650px;
+  position: absolute;
+  right: 22em;
+  top: 0%;
+  border-radius: 30px 0px 30px 0px;
+  box-shadow: 5px 5px 12px grey;
+  transition: transform 0.2s ease-out;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+#stat img{
+    height: 450px;
+}

@@ -1,0 +1,566 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEC@TBI</title>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/index.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/cube.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/sidebar.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/main_2.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/footer.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/patners.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/media.css" %}'>
+    <script src="https://kit.fontawesome.com/628c8d2499.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- jQuery & TweenMax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+</head>
+<body>
+    <div id="logo" onclick="redirhome()">
+        <img src="{% static 'myapp/TBI_LOGO.png' %}" style="width: 100%;height:150px">
+    </div>
+    <nav id="menu">
+        <div class="menu-item">
+            <div class="menu-text">
+                <a href="#">Products</a>
+            </div>
+            <div class="sub-menu" style="height: -10px;">
+                <div class="icon-box"  onclick="redirproducts()">
+                    <div class="icon"><i class="fal fa-wind-turbine"></i></div>
+                    <div class="text">
+                        <div class="title">Products Developed / Commercialized <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div class="menu-item highlight">
+            <div class="menu-text">
+                <a href="#">About</a>
+            </div>
+            <div class="sub-menu double">
+                <div class="icon-box gb a" onclick="redirinc()">
+                    <div class="icon"><i class="far fa-question-circle"></i></div>
+                    <div class="text">
+                        <div class="title">Incubation <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">From Professionals</div>
+                    </div>
+                </div>
+                <div class="icon-box gb b" onclick="redirmen()">
+                    <div class="icon"><i class="far fa-users-class"></i></div>
+                    <div class="text">
+                        <div class="title">Mentorship <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">In Classroom</div>
+                    </div>
+                </div>
+                <div class="icon-box gb c">
+                    <div class="icon"><i class="far fa-school"></i></div>
+                    <div class="text">
+                        <div class="title">Infrastructure <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Work</div>
+                    </div>
+                </div>
+                <div class="icon-box gb d" onclick="redir()">
+                    <div class="icon"><i class="far fa-chess-rook"></i></div>
+                    <div class="text">
+                        <div class="title">Spark Fund<i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Funding</div>
+                    </div>
+                </div>
+                <div class="icon-box gb e">
+                    <div class="icon"><i class="far fa-video-plus"></i></div>
+                    <div class="text">
+                        <div class="title">Facilities <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">A Creator Environment</div>
+                    </div>
+                </div>
+                <div class="icon-box gb f" onclick="redirinc()">
+                    <div class="icon"><i class="fas fa-info-circle"></i></div>
+                    <div class="text">
+                        <div class="title">About <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Our Journey</div>
+                    </div>
+                </div>
+                <div class="bottom-container">
+                    Ready to dive in? <a href="#" style="margin-right: 80px;">Get Started</a>
+                    <a href="{% url 'home' %}">Home</a>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div class="menu-item highlight">
+            <div class="menu-text">
+                <a href="#">Services</a>
+            </div>
+            <div class="sub-menu triple">
+                <div class="top-container gb c icon-box">
+                    <div class="icon big"><i class="far fa-book"></i></div>
+                    <div class="text">
+                        <div class="title">Where to start</div>
+                        <div class="sub-text">Find out where to begin below</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3>Pre services</h3>
+                    <a href="#">Business Planning and Developmen</a>
+                    <a href="#">Engineering & Design</a>
+                    <a href="#">Testing,Prototype</a>
+                    <a href="#">Packaging of the Concept </a>
+                </div>
+                <div class="box">
+                    <h3>Post Services</h3>
+                    <a href="#">Marketing and Legal Assistance</a>
+                    <a href="#">Assistance for Licences</a>
+                    <a href="#">IPR related issues</a>
+                    <a href="#">Post-incubation services</a>
+                </div>
+                <div class="icon-box flat tp">
+                    <div class="icon"><i class="fal fa-plug"></i></div>
+                    <div class="text">
+                        <div class="title">Career Guide <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat tp">
+                    <div class="icon"><i class="fal fa-comments"></i></div>
+                    <div class="text">
+                        <div class="title">Support Line <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat">
+                    <div class="icon"><i class="fal fa-phone-volume"></i></div>
+                    <div class="text">
+                        <div class="title">Live Chat <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat">
+                    <div class="icon"><i class="fal fa-book-spells"></i></div>
+                    <div class="text">
+                        <div class="title">Documentation <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-text">
+                <a href="#">Community</a>
+            </div>
+            <div class="sub-menu">
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-linkedin"></i></div>
+                    <div class="text">
+                        <div class="title">LinkedIn<i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Join our passionate community.</div>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-twitter-square"></i></div>
+                    <div class="text">
+                        <div class="title">Twitter <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Follow us on twitter.</div>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-facebook-square"></i></i></div>
+                    <div class="text">
+                        <div class="title">Facebook <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Follow us on facebook.</div>
+                    </div>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div id="sub-menu-container">
+            <div id="sub-menu-holder">
+                <div id="sub-menu-bottom">
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section id ="tray">
+        hi
+    </section>
+    <section id="titles">
+        <center>
+            <p>TBI@KEC bagged "National Award for Technology Business Incubator for the year 2012”
+                         <br>Call for application under EDII-TN IVP (Grant)</p> 
+        </center>
+    </section>
+    <main>
+        <div id="cube">
+            <div class="cube-container">
+                <input class="radio-button" type="radio" name="cube-gallery" checked>
+                <input class="radio-button" type="radio" name="cube-gallery">
+                <input class="radio-button" type="radio" name="cube-gallery">
+                <input class="radio-button" type="radio" name="cube-gallery">
+                <input class="radio-button" type="radio" name="cube-gallery">
+                <input class="radio-button" type="radio" name="cube-gallery">
+                
+                <!-- Side messages -->
+                <div class="side-message message-1">Thiru. P.C.Palanisamy, <br>Patron Member - The KVITT launching the product "Legalme" on 19.06.2013</div>
+                <div class="side-message message-2">Mr.Manikam Ramaswami, <br>Chairman- Loyal Textile Mills Ltd visited TBI on 11.03.2015 </div>
+                <div class="side-message message-3">Shri.H.K.Mittal, <br>launching the product Secure Track APK on 27.12.2014 </div>
+                <div class="side-message message-4">Visited by team of HAKO, Germany</div>
+                <div class="side-message message-5">South Korean Team visited to TBI@KEC</div>
+                <div class="side-message message-6">Chairman - TBI@KEC handing over the sanction order and cheque to 945Signals</div>
+        
+                <div class="cube">
+                    <div class="cube-side"></div>
+                    <div class="cube-side"></div>
+                    <div class="cube-side"></div>
+                    <div class="cube-side"></div>
+                    <div class="cube-side"></div>
+                    <div class="cube-side"></div>
+                </div>
+            </div>
+        </div>
+    
+        <section id = "sidebar">
+            <div id="sitems">
+                <button class="brutalist-button" onclick="">
+                    <div class="ms-logo">
+                    <img src="{% static 'myapp/KECTBI.jpg' %}" style="height: 30px;">
+                    </div>
+                    <div class="button-text" onclick="redirns()">
+                    <span>NewPaper clippings</span>
+                    <span>TBI@KEC</span>
+                    </div>
+                </button>
+                <button class="brutalist-button">
+                    <div class="ms-logo">
+                    <img src="{% static 'myapp/KECTBI.jpg' %}" style="height: 30px;">
+                    </div>
+                    <div class="button-text">
+                    <span>Glance</span>
+                    <span>  TBI@KEC</span>
+                    </div>
+                </button>  
+                <button class="brutalist-button">
+                    <div class="ms-logo">
+                    <img src="{% static 'myapp/KEC.jpg' %}" style="height: 30px;">
+                    </div>
+                    <div class="button-text" onclick="redirkec()">
+                    <span>       About</span>
+                    <span>     KEC</span>
+                    </div>
+                </button>  
+                <button class="brutalist-button">
+                    <div class="ms-logo">
+                    <img src="{% static 'myapp/KECTBI.jpg' %}" style="height: 30px;">
+                    </div>
+                    <div class="button-text" onclick="redirinc()">
+                    <span>   Objectives</span>
+                    <span>  TBI@KEC</span>
+                    </div>
+                </button>             
+            </div>
+        </section>
+    </main>
+    <section id="gapsc">
+        hi
+     </section>
+    <section id="main_2">
+        <div id="eventbar" class="eb">
+            <button id="main2but">PRAYAS Lab</button>
+            <button id="main2but">IPR</button>
+            <button id="main2but">CSR Funding Scheme</button>
+            <button id="main2but">Beneficiary</button>
+            <button id="main2but">Gallery</button>
+            <button id="main2but">Student Project</button>
+            <button id="main2but">Entrepreneurship</button>
+            <button id="main2but" onclick="redirrecent()">Recent Updates</button>
+        </div>
+        <div id="stat">
+            <img src="{% static 'myapp/vsi.png' %}">
+        </div>
+    </section>
+    <section id="patners">
+        <h1>Our Partners</h1>
+        <div id="contentContainer" class="trans3d"> 
+            <section id="carouselContainer" class="trans3d">
+                <figure id="item1" class="carouselItem trans3d"><div class="carouselItemInner trans3d">
+                    <img src="{% static 'myapp/images/AWS.png' %}">
+                    </div>
+                </figure>
+                <figure id="item2" class="carouselItem trans3d"><div class="carouselItemInner trans3d">
+                    <img src="{% static 'myapp/images/Zoho.png' %}">
+                    </div>
+                </figure>
+                <figure id="item3" class="carouselItem trans3d"><div class="carouselItemInner trans3d">
+                    <img src="{% static 'myapp/images/Yi.jpg' %}">
+                    </div>
+                </figure>
+                <figure id="item4" class="carouselItem trans3d"><div class="carouselItemInner trans3d">
+                    <img src="{% static 'myapp/images/EEDISSIA.png' %}">
+                    </div>
+                </figure>
+                <figure id="item5" class="carouselItem trans3d"><div class="carouselItemInner trans3d">
+                    <img src="{% static 'myapp/images/DST.png' %}">
+                    </div>
+                </figure>
+                <figure id="item6" class="carouselItem trans3d"><div class="carouselItemInner trans3d">
+                    <img src="{% static 'myapp/images/DSTNIDHI.jpg' %}">
+                    </div>
+                </figure>
+                <figure id="item7" class="carouselItem trans3d"><div class="carouselItemInner trans3d">
+                    <img src="{% static 'myapp/images/CII.png' %}">
+                    </div>
+                </figure>
+                <figure id="item8" class="carouselItem trans3d"><div class="carouselItemInner trans3d">
+                    <img src="{% static 'myapp/images/Campus Fund.png' %}">
+                    </div>
+                </figure>
+                <figure id="item9" class="carouselItem trans3d"><div class="carouselItemInner trans3d">
+                    <img src="{% static 'myapp/images/MSME.png' %}">
+                    </div>
+                </figure>
+                <figure id="item10" class="carouselItem trans3d"><div class="carouselItemInner trans3d">
+                    <img src="{% static 'myapp/images/APIN.jpg' %}">
+                    </div>
+                </figure>
+                <figure id="item11" class="carouselItem trans3d"><div class="carouselItemInner trans3d">
+                    <img src="{% static 'myapp/images/solidworks.png' %}">
+                    </div>
+                </figure>
+                <figure id="item12" class="carouselItem trans3d"><div class="carouselItemInner trans3d">
+                    <img src="{% static 'myapp/images/Mathworks.png' %}">
+                    </div>
+                </figure>	
+            </section>
+        </div>
+    </section>
+    <section id="gapsc">
+       hi
+    </section>
+    <section id="end">
+        <footer>
+            Maintained by TBI@KEC | Designed by CSE-B
+        </footer>
+    </section>
+    <script>
+        let currentIndex = 0;
+        const radios = document.querySelectorAll('.radio-button');
+        let rotationInterval;
+        let pauseTimeout;
+
+        function startAutoRotation() {
+            rotationInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % radios.length;
+                radios[currentIndex].checked = true;
+            }, 3000);
+        }
+
+        function restartAutoRotationAfterPause() {
+            clearTimeout(pauseTimeout);
+            pauseTimeout = setTimeout(() => {
+                startAutoRotation();
+            }, 3500); // Resume after 10 seconds of inactivity
+        }
+
+        // Initial start
+        startAutoRotation();
+
+        radios.forEach(radio => {
+            radio.addEventListener('click', () => {
+                // Clear existing intervals/timeouts
+                clearInterval(rotationInterval);
+                clearTimeout(pauseTimeout);
+                
+                // Update current index
+                currentIndex = Array.from(radios).indexOf(radio);
+                
+                // Schedule auto-rotation restart
+                restartAutoRotationAfterPause();
+            });
+        });
+        //slide in animation
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const section = document.getElementById("main_2");
+
+            function revealOnScroll() {
+                const sectionPosition = section.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (sectionPosition < screenPosition) {
+                    section.classList.add("show");
+                }
+            }
+
+            window.addEventListener("scroll", revealOnScroll);
+        });
+
+        //on load main
+        window.addEventListener("load", function () {
+            document.querySelector("main").classList.add("show");
+        });
+        
+        //on scroll border nav
+        window.addEventListener("scroll", function () {
+            const nav = document.querySelector("nav");
+            
+            if (window.scrollY > 50) { // Adjust scroll threshold as needed
+                nav.classList.add("scrolled");
+            } else {
+                nav.classList.remove("scrolled");
+            }
+        });
+
+        //tilt stat on mouse dir
+        const stat = document.getElementById("stat");
+
+        stat.addEventListener("mousemove", (event) => {
+            const rect = stat.getBoundingClientRect();
+            const x = (event.clientX - rect.left) / rect.width - 0.5;
+            const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+            const tiltX = y * 100; 
+            const tiltY = x * 100; 
+
+            stat.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+        });
+
+        stat.addEventListener("mouseleave", () => {
+            stat.style.transform = "rotateX(0deg) rotateY(0deg)";
+        });
+
+        //-------------------------------------------------------------------------------------------------------------------------------//
+        //script for patners
+        // set and cache variables
+        var w, container, carousel, item, radius, itemLength, rY, ticker, fps; 
+        var mouseX = 0;
+        var mouseY = 0;
+        var addX = 0;
+
+        // fps counter created by: https://gist.github.com/sharkbrainguy/1156092
+        var fps_counter = {
+            tick: function () 
+            {
+                // this has to clone the array every tick so that
+                // separate instances won't share state 
+                this.times = this.times.concat(+new Date());
+                var seconds, times = this.times;
+
+                if (times.length > this.span + 1) 
+                {
+                    times.shift(); // ditch the oldest time
+                    seconds = (times[times.length - 1] - times[0]) / 1000;
+                    return Math.round(this.span / seconds);
+                } 
+                else return null;
+            },
+
+            times: [],
+            span: 20
+        };
+        var counter = Object.create(fps_counter);
+
+        $(document).ready(init);
+
+        function init()
+        {
+            w = $(window);
+            container = $('#contentContainer');
+            carousel = $('#carouselContainer');
+            item = $('.carouselItem');
+            itemLength = $('.carouselItem').length;
+            fps = $('#fps');
+            rY = 360 / itemLength;
+            
+            // INCREASE THE RADIUS TO CREATE MORE GAPS BETWEEN ITEMS
+            // The larger this value, the more space between carousel items
+            radius = Math.round((300) / Math.tan(Math.PI / itemLength));
+            
+            // set container 3d props
+            TweenMax.set(container, {perspective:600})
+            TweenMax.set(carousel, {z:-(radius)})
+            
+            // create carousel item props
+            for (var i = 0; i < itemLength; i++)
+            {
+                var $item = item.eq(i);
+                var $block = $item.find('.carouselItemInner');
+                
+                // Thanks @chrisgannon!
+                TweenMax.set($item, {rotationY:rY * i, z:radius, transformOrigin:"50% 50% " + -radius + "px"});
+                
+                animateIn($item, $block)						
+            }
+            
+            // set mouse x and y props and looper ticker
+            window.addEventListener("mousemove", onMouseMove, false);
+            ticker = setInterval(looper, 1000/60);			
+        }
+
+        function animateIn($item, $block)
+        {
+            var $nrX = 360 * getRandomInt(2);
+            var $nrY = 360 * getRandomInt(2);
+                
+            var $nx = -(200) + getRandomInt(4000)
+            var $ny = -(200) + getRandomInt(4000)
+            var $nz = -4000 +  getRandomInt(4000)
+                
+            var $s = 1.5 + (getRandomInt(10) * .1)
+            var $d = 1 - (getRandomInt(8) * .1)
+            
+            TweenMax.set($item, { autoAlpha:1, delay:$d })	
+            TweenMax.set($block, { z:$nz, rotationY:$nrY, rotationX:$nrX, x:$nx, y:$ny, autoAlpha:0})
+            TweenMax.to($block, $s, { delay:$d, rotationY:0, rotationX:0, z:0,  ease:Expo.easeInOut})
+            TweenMax.to($block, $s-.5, { delay:$d, x:0, y:0, autoAlpha:1, ease:Expo.easeInOut})
+        }
+
+        function onMouseMove(event)
+        {
+            // Reduce sensitivity for smoother movement
+            mouseX = -(-(window.innerWidth * .5) + event.pageX) * .0015;
+            mouseY = -(-(window.innerHeight * .5) + event.pageY) * .005;
+            // No mouseZ calculation to prevent expansion
+        }
+
+        // loops and sets the carousel 3d properties
+        function looper()
+        {
+            addX += mouseX
+            TweenMax.to(carousel, 1, { rotationY:addX, rotationX:mouseY, ease:Quint.easeOut })
+            // Removed z-axis animation that was causing expansion
+            fps.text('Framerate: ' + counter.tick() + '/60 FPS')	
+        }
+
+        function getRandomInt($n)
+        {
+            return Math.floor((Math.random()*$n)+1);	
+        }
+
+        //redirect to pages
+        function redir(){
+            window.location.href="{% url 'funds' %}";
+        }
+        function redirhome(){
+            window.location.href="{% url 'home' %}";
+        }
+        function redirinc(){
+            window.location.href="{% url 'incub' %}";
+        }
+        function redirkec(){
+            window.location.href="https://kongu.ac.in/";
+        }
+        function redirns(){
+            window.location.href="{% url 'newspc' %}";
+        }
+        function redirmen(){
+            window.location.href="{% url 'mentor' %}";
+        }
+        function redirproducts(){
+            window.location.href="{% url 'product' %}";
+        }
+        function redirrecent(){
+            window.location.href="{% url 'recent' %}";
+        }
+    </script>
+</body>
+</html>

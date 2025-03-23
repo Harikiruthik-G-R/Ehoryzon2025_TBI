@@ -1,0 +1,333 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEC@TBI</title>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/index.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/footer.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/incubator/products.css" %}'>
+    <script src="https://kit.fontawesome.com/628c8d2499.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- jQuery & TweenMax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+</head>
+<body>
+    <div id="logo" onclick="redirhome()">
+        <img src="{% static 'myapp/TBI_LOGO.png' %}" style="width: 100%;height:150px">
+    </div>
+    <nav id="menu">
+        <div class="menu-item">
+            <div class="menu-text">
+                <a href="#">Products</a>
+            </div>
+            <div class="sub-menu" style="height: -10px;">
+                <div class="icon-box"  onclick="redirproducts()">
+                    <div class="icon"><i class="fal fa-wind-turbine"></i></div>
+                    <div class="text">
+                        <div class="title">Products Developed / Commercialized <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div class="menu-item highlight">
+            <div class="menu-text">
+                <a href="#">About</a>
+            </div>
+            <div class="sub-menu double">
+                <div class="icon-box gb a" onclick="redirinc()">
+                    <div class="icon"><i class="far fa-question-circle"></i></div>
+                    <div class="text">
+                        <div class="title">Incubation <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">From Professionals</div>
+                    </div>
+                </div>
+                <div class="icon-box gb b" onclick="redirmen()">
+                    <div class="icon"><i class="far fa-users-class"></i></div>
+                    <div class="text">
+                        <div class="title">Mentorship <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">In Classroom</div>
+                    </div>
+                </div>
+                <div class="icon-box gb c">
+                    <div class="icon"><i class="far fa-school"></i></div>
+                    <div class="text">
+                        <div class="title">Infrastructure <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Work</div>
+                    </div>
+                </div>
+                <div class="icon-box gb d" onclick="redir()">
+                    <div class="icon"><i class="far fa-chess-rook"></i></div>
+                    <div class="text">
+                        <div class="title">Spark Fund<i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Funding</div>
+                    </div>
+                </div>
+                <div class="icon-box gb e">
+                    <div class="icon"><i class="far fa-video-plus"></i></div>
+                    <div class="text">
+                        <div class="title">Facilities <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">A Creator Environment</div>
+                    </div>
+                </div>
+                <div class="icon-box gb f">
+                    <div class="icon"><i class="fas fa-info-circle"></i></div>
+                    <div class="text">
+                        <div class="title">About <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Our Journey</div>
+                    </div>
+                </div>
+                <div class="bottom-container">
+                    Ready to dive in? <a href="#" style="margin-right: 80px;">Get Started</a>
+                    <a href="{% url 'home' %}">Home</a>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div class="menu-item highlight">
+            <div class="menu-text">
+                <a href="#">Services</a>
+            </div>
+            <div class="sub-menu triple">
+                <div class="top-container gb c icon-box">
+                    <div class="icon big"><i class="far fa-book"></i></div>
+                    <div class="text">
+                        <div class="title">Where to start</div>
+                        <div class="sub-text">Find out where to begin below</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3>Pre services</h3>
+                    <a href="#">Business Planning and Developmen</a>
+                    <a href="#">Engineering & Design</a>
+                    <a href="#">Testing,Prototype</a>
+                    <a href="#">Packaging of the Concept </a>
+                </div>
+                <div class="box">
+                    <h3>Post Services</h3>
+                    <a href="#">Marketing and Legal Assistance</a>
+                    <a href="#">Assistance for Licences</a>
+                    <a href="#">IPR related issues</a>
+                    <a href="#">Post-incubation services</a>
+                </div>
+                <div class="icon-box flat tp">
+                    <div class="icon"><i class="fal fa-plug"></i></div>
+                    <div class="text">
+                        <div class="title">Career Guide <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat tp">
+                    <div class="icon"><i class="fal fa-comments"></i></div>
+                    <div class="text">
+                        <div class="title">Support Line <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat">
+                    <div class="icon"><i class="fal fa-phone-volume"></i></div>
+                    <div class="text">
+                        <div class="title">Live Chat <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat">
+                    <div class="icon"><i class="fal fa-book-spells"></i></div>
+                    <div class="text">
+                        <div class="title">Documentation <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-text">
+                <a href="#">Community</a>
+            </div>
+            <div class="sub-menu">
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-linkedin"></i></div>
+                    <div class="text">
+                        <div class="title">LinkedIn<i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Join our passionate community.</div>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-twitter-square"></i></div>
+                    <div class="text">
+                        <div class="title">Twitter <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Follow us on twitter.</div>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-facebook-square"></i></i></div>
+                    <div class="text">
+                        <div class="title">Facebook <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">WFollow us on facebook.</div>
+                    </div>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div id="sub-menu-container">
+            <div id="sub-menu-holder">
+                <div id="sub-menu-bottom">
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section id ="tray">
+        hi
+    </section>
+    <div class="main">
+        <h1>PRODUCTS</h1>
+        <h1>PRODUCTS</h1>
+        <div class="button"><h2 id="see">see more</h2></div>
+      <div class="center">
+        <div class="book">
+          <div class="pages" id="pages-container">
+            <!-- Pages will be dynamically added here -->
+          </div>
+        </div>
+        <div class="controls">
+          <button type="button" class="btn" onclick="previous()">
+            <span class="material-icons-outlined"><i class="fas fa-arrow-left"></i></span>
+          </button>
+          <button type="button" class="btn" onclick="next()">
+            <span class="material-icons-outlined"><i class="fas fa-arrow-right"></i></span>
+          </button>
+        </div>
+      </div>
+      </div>
+      <script>
+        async function loadProducts() {
+          try {
+            const response = await fetch("{% static 'myapp/datasets/product.json' %}");
+            const products = await response.json();
+            const pagesContainer = document.getElementById("pages-container");
+  
+            // Dynamically add each product as a page
+            products.forEach((product, index) => {
+              const page = document.createElement("div");
+              page.classList.add("page");
+              if (index === 0) page.classList.add("active"); // Add the 'active' class to the first page
+  
+              const pageSideFront = document.createElement("div");
+              pageSideFront.classList.add("page-side", "front");
+  
+              const pageSideBack = document.createElement("div");
+              pageSideBack.classList.add("page-side", "back");
+              const beeds=document.createElement("div");
+              beeds.classList.add("beeds");
+              const beed1=document.createElement("div");
+              const beed2=document.createElement("div");
+              const beed3=document.createElement("div");
+              const beed4=document.createElement("div");
+              const beed5=document.createElement("div");
+              beed1.classList.add("beed");
+              beed2.classList.add("beed");
+              beed3.classList.add("beed");
+              beed4.classList.add("beed");
+              beed5.classList.add("beed");
+              pagesContainer.appendChild(beeds);
+              beeds.appendChild(beed1);
+              beeds.appendChild(beed2);
+              beeds.appendChild(beed3);
+              beeds.appendChild(beed4);
+              beeds.appendChild(beed5);
+              // Adding content to the front and back sides
+              pageSideFront.innerHTML = `
+                <div class="page-head">
+                  <div class="page-title">${product.title}</div>
+                </div>
+                <div class="image" style="background-image: url(${product.image});"></div>
+                <div class="page-content">${product.content}</div>
+              `;
+              pageSideBack.innerHTML = `
+                <div class="page-head">
+                  <div class="page-title">${product.title}</div>
+                </div>
+                <div class="image" style="background-image: url(${product.image});"></div>
+                <div class="page-content">${product.content}</div>
+              `;
+  
+              page.appendChild(pageSideFront);
+              page.appendChild(pageSideBack);
+              pagesContainer.appendChild(page);
+              const footer=document.createElement("div");
+              const footer1=document.createElement("div");
+              const span1=document.createElement("span"); 
+              const span2=document.createElement("span");
+              footer.classList.add("page-footer")
+              footer1.classList.add("page-footer")
+              span2.classList.add("pg-no");
+              pageSideFront.appendChild(footer);
+              pageSideFront.appendChild(footer1);
+              pageSideBack.appendChild(footer);
+              span2.innerHTML=`${product.pg}`;
+              span1.innerHTML=`${product.company}`;
+              footer.appendChild(span1);
+              footer.appendChild(span2);
+              footer1.appendChild(span1);
+              footer1.appendChild(span2);
+  
+            });
+            setIndex();
+          } catch (error) {
+            console.error("Error loading products:", error);
+          }
+        }
+  
+        function setIndex() {
+          let pages = document.querySelectorAll(".page");
+          pages.forEach((page, index) => {
+            page.style.zIndex = pages.length - index;
+          });
+        }
+  
+        function previous() {
+          let active = document.querySelector(".active");
+          let prevSib = active.previousElementSibling;
+          if (prevSib) {
+            active.className = "page";
+            prevSib.className = "page active";
+            setIndex();
+            prevSib.style.transform = "rotateY(0deg)";
+          }
+        }
+  
+        function next() {
+          let active = document.querySelector(".active");
+          let nextSib = active.nextElementSibling;
+          if (nextSib) {
+            active.style.transform = "rotateY(180deg)";
+            active.className = "page";
+            setIndex();
+            active.style.zIndex = "9998";
+            nextSib.className = "page active";
+          }
+        }
+  
+        // Load products on page load
+        loadProducts();
+        //redir
+        function redir(){
+            window.location.href="{% url 'funds' %}";
+        }
+        function redirhome(){
+            window.location.href="{% url 'home' %}";
+        }
+        function redirinc(){
+            window.location.href="{% url 'incub' %}";
+        }
+        function redirmen(){
+            window.location.href="{% url 'mentor' %}";
+        }
+        function redirproducts(){
+            window.location.href="{% url 'product' %}";
+        }
+      </script>
+</body>
+</html>
+  

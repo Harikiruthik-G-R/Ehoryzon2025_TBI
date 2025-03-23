@@ -1,0 +1,768 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEC@TBI</title>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/index.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/footer.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/form/form.css" %}'>
+    <script src="https://kit.fontawesome.com/628c8d2499.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- jQuery & TweenMax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <script>
+                var message = "{{ message }}";
+                alert(message);
+            </script>
+        {% endfor %}
+    {% endif %}
+    <div id="logo" onclick="redirhome()">
+        <img src="{% static 'myapp/TBI_LOGO.png' %}" style="width: 100%;height:150px">
+    </div>
+    <nav id="menu">
+        <div class="menu-item">
+            <div class="menu-text">
+                <a href="#">Products</a>
+            </div>
+            <div class="sub-menu" style="height: -10px;">
+                <div class="icon-box"  onclick="redirproducts()">
+                    <div class="icon"><i class="fal fa-wind-turbine"></i></div>
+                    <div class="text">
+                        <div class="title">Products Developed / Commercialized <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div class="menu-item highlight">
+            <div class="menu-text">
+                <a href="#">About</a>
+            </div>
+            <div class="sub-menu double">
+                <div class="icon-box gb a" onclick="redirinc()">
+                    <div class="icon"><i class="far fa-question-circle"></i></div>
+                    <div class="text">
+                        <div class="title">Incubation <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">From Professionals</div>
+                    </div>
+                </div>
+                <div class="icon-box gb b" onclick="redirmen()">
+                    <div class="icon"><i class="far fa-users-class"></i></div>
+                    <div class="text">
+                        <div class="title">Mentorship <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">In Classroom</div>
+                    </div>
+                </div>
+                <div class="icon-box gb c">
+                    <div class="icon"><i class="far fa-school"></i></div>
+                    <div class="text">
+                        <div class="title">Infrastructure <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Work</div>
+                    </div>
+                </div>
+                <div class="icon-box gb d" onclick="redir()">
+                    <div class="icon"><i class="far fa-chess-rook"></i></div>
+                    <div class="text">
+                        <div class="title">Spark Fund<i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Funding</div>
+                    </div>
+                </div>
+                <div class="icon-box gb e">
+                    <div class="icon"><i class="far fa-video-plus"></i></div>
+                    <div class="text">
+                        <div class="title">Facilities <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">A Creator Environment</div>
+                    </div>
+                </div>
+                <div class="icon-box gb f">
+                    <div class="icon"><i class="fas fa-info-circle"></i></div>
+                    <div class="text">
+                        <div class="title">About <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Our Journey</div>
+                    </div>
+                </div>
+                <div class="bottom-container">
+                    Ready to dive in? <a href="#" style="margin-right: 80px;">Get Started</a>
+                    <a href="{% url 'home' %}">Home</a>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div class="menu-item highlight">
+            <div class="menu-text">
+                <a href="#">Services</a>
+            </div>
+            <div class="sub-menu triple">
+                <div class="top-container gb c icon-box">
+                    <div class="icon big"><i class="far fa-book"></i></div>
+                    <div class="text">
+                        <div class="title">Where to start</div>
+                        <div class="sub-text">Find out where to begin below</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3>Pre services</h3>
+                    <a href="#">Business Planning and Developmen</a>
+                    <a href="#">Engineering & Design</a>
+                    <a href="#">Testing,Prototype</a>
+                    <a href="#">Packaging of the Concept </a>
+                </div>
+                <div class="box">
+                    <h3>Post Services</h3>
+                    <a href="#">Marketing and Legal Assistance</a>
+                    <a href="#">Assistance for Licences</a>
+                    <a href="#">IPR related issues</a>
+                    <a href="#">Post-incubation services</a>
+                </div>
+                <div class="icon-box flat tp">
+                    <div class="icon"><i class="fal fa-plug"></i></div>
+                    <div class="text">
+                        <div class="title">Career Guide <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat tp">
+                    <div class="icon"><i class="fal fa-comments"></i></div>
+                    <div class="text">
+                        <div class="title">Support Line <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat">
+                    <div class="icon"><i class="fal fa-phone-volume"></i></div>
+                    <div class="text">
+                        <div class="title">Live Chat <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat">
+                    <div class="icon"><i class="fal fa-book-spells"></i></div>
+                    <div class="text">
+                        <div class="title">Documentation <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-text">
+                <a href="#">Community</a>
+            </div>
+            <div class="sub-menu">
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-linkedin"></i></div>
+                    <div class="text">
+                        <div class="title">LinkedIn<i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Join our passionate community.</div>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-twitter-square"></i></div>
+                    <div class="text">
+                        <div class="title">Twitter <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Follow us on twitter.</div>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-facebook-square"></i></i></div>
+                    <div class="text">
+                        <div class="title">Facebook <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">WFollow us on facebook.</div>
+                    </div>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div id="sub-menu-container">
+            <div id="sub-menu-holder">
+                <div id="sub-menu-bottom">
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section id ="tray">
+        hi
+    </section>
+    <div class="container">
+        <header>
+            <h1>KEC SPARK FUND</h1>
+            <p class="subtitle">Innovation Grant Application Form</p>
+            <p class="subtitle">(An initiative by IICKEC, EMDC and TBI@KEC)</p>
+        </header>
+        
+        <div class="checklist-container">
+            <div class="checklist-title">Required Documents Checklist</div>
+            <div class="checklist-items">
+                <div class="checkbox-label">
+                    <input type="checkbox" id="poc" name="checklist">
+                    <label for="poc">Proof of Concept (PoC) / Prototype</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="id_card" name="checklist">
+                    <label for="id_card">Photocopy of institution's ID card</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="marksheet" name="checklist">
+                    <label for="marksheet">10th / 12th Mark sheet or TC</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="community" name="checklist">
+                    <label for="community">Community certificate</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="aadhaar" name="checklist">
+                    <label for="aadhaar">Photocopy of Aadhaar card</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="bank" name="checklist">
+                    <label for="bank">Photocopy of bank pass book</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="sector" name="checklist">
+                    <label for="sector">Project sector specified</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="trl" name="checklist">
+                    <label for="trl">Status of work already carried out (TRL Level)</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="annexure1" name="checklist">
+                    <label for="annexure1">Addressed pain points (Annexure I)</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="annexure2" name="checklist">
+                    <label for="annexure2">Science and working principle (Annexure II)</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="annexure3" name="checklist">
+                    <label for="annexure3">Final outcomes / deliverables (Annexure III)</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="annexure4" name="checklist">
+                    <label for="annexure4">Beneficiary of innovation (Annexure IV)</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="annexure5" name="checklist">
+                    <label for="annexure5">Activity details/work plan (Annexure V)</label>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="annexure6" name="checklist">
+                    <label for="annexure6">Financial Support information (Annexure VI)</label>
+                </div>
+            </div>
+        </div>
+        
+        <form class="form-container" action="{% url 'spark_fund_form' %}" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <div class="form-section">
+                <h2>1. Project Details</h2>
+                <div class="form-group">
+                    <label for="project_title" class="required">Title of the proposed project</label>
+                    <input type="text" id="project_title" name="project_title" required>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>2. Innovator Details</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name" class="required">Name (as per records)</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="roll_no" class="required">Roll No</label>
+                        <input type="text" id="roll_no" name="roll_no" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="department" class="required">Department</label>
+                        <input type="text" id="department" name="department" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="section" class="required">Section</label>
+                        <input type="text" id="section" name="section" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="father_name" class="required">Father's name</label>
+                        <input type="text" id="father_name" name="father_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob" class="required">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email" class="required">Email ID</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile" class="required">Mobile Number</label>
+                        <input type="number" id="mobile" name="mobile" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="gender" class="required">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="qualification" class="required">Educational Qualification</label>
+                        <input type="text" id="qualification" name="qualification" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="category" class="required">Category</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select category</option>
+                            <option value="general">General</option>
+                            <option value="sc">SC</option>
+                            <option value="st">ST</option>
+                            <option value="obc">OBC</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="aadhaar" class="required">Aadhaar No</label>
+                        <input type="number" id="aadhaar" name="aadhaar" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bank_account" class="required">Bank Account number</label>
+                        <input type="text" id="bank_account" name="bank_account" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ifsc" class="required">IFSC code</label>
+                        <input type="text" id="ifsc" name="ifsc" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="postal_address" class="required">Postal Address</label>
+                        <textarea id="postal_address" name="postal_address" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="permanent_address" class="required">Permanent Address</label>
+                        <textarea id="permanent_address" name="permanent_address" required></textarea>
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 30px;">Other Innovators Details</h3>
+                <p class="form-note">If single innovator, leave blank.</p>
+                
+                <div id="other-innovators-container">
+                    <div class="other-innovator">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="other_name_1">Name</label>
+                                <input type="text" id="other_name_1" name="other_name_1">
+                            </div>
+                            <div class="form-group">
+                                <label for="other_department_1">Department</label>
+                                <input type="text" id="other_department_1" name="other_department_1">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="other_section_1">Section</label>
+                                <input type="text" id="other_section_1" name="other_section_1">
+                            </div>
+                            <div class="form-group">
+                                <label for="other_roll_1">Roll No</label>
+                                <input type="text" id="other_roll_1" name="other_roll_1">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="other_gender_1">Gender</label>
+                                <select id="other_gender_1" name="other_gender_1">
+                                    <option value="">Select gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="other_contact_1">Contact</label>
+                                <input type="number" id="other_contact_1" name="other_contact_1">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="other_email_1">Email ID</label>
+                                <input type="email" id="other_email_1" name="other_email_1">
+                            </div>
+                            <div class="form-group">
+                                <label for="other_aadhaar_1">Aadhaar No</label>
+                                <input type="number" id="other_aadhaar_1" name="other_aadhaar_1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="add-button" id="add-innovator">+ Add Another Innovator</button>
+            </div>
+            
+            <div class="form-section">
+                <h2>3. Project Description</h2>
+                <div class="form-group">
+                    <label for="annexure1_file" class="required">Annexure I: Brief description of the idea/PoC (Max 500 words)</label>
+                    <p class="form-note">Highlight the innovation and addressed pain points</p>
+                    <input type="file" id="annexure1_file" name="annexure1_file" class="file-input" accept=".pdf,.doc,.docx" required>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>4. Project Classification</h2>
+                <div class="form-group">
+                    <label class="required">Project Sector</label>
+                    <div class="radio-group">
+                        <div class="radio-label">
+                            <input type="radio" id="sector_agriculture" name="sector" value="agriculture" required>
+                            <label for="sector_agriculture">Agriculture and Allied Fields</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_biotech" name="sector" value="biotech">
+                            <label for="sector_biotech">Bio Technology</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_building" name="sector" value="building">
+                            <label for="sector_building">Building Materials / Construction Technology</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_renewable" name="sector" value="renewable">
+                            <label for="sector_renewable">Electricity, New and Renewable Energy and Environmental sustainability</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_healthcare" name="sector" value="healthcare">
+                            <label for="sector_healthcare">Healthcare</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_ict" name="sector" value="ict">
+                            <label for="sector_ict">Information & Communication Technology (ICT)</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_sensor" name="sector" value="sensor">
+                            <label for="sector_sensor">Sensor Technology</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_manufacturing" name="sector" value="manufacturing">
+                            <label for="sector_manufacturing">Manufacturing and Engineering</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_electronics" name="sector" value="electronics">
+                            <label for="sector_electronics">Micro and nano electronics</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_materials" name="sector" value="materials">
+                            <label for="sector_materials">New Materials including Nano Materials</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_waste" name="sector" value="waste">
+                            <label for="sector_waste">Water, Sanitation and Solid-Liquid Waste Management</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_housing" name="sector" value="housing">
+                            <label for="sector_housing">Housing –Urban and Rural</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_transport" name="sector" value="transport">
+                            <label for="sector_transport">Transport</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_telecom" name="sector" value="telecom">
+                            <label for="sector_telecom">Tele-communication</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_cyber" name="sector" value="cyber">
+                            <label for="sector_cyber">Cyber-Security</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_drone" name="sector" value="drone">
+                            <label for="sector_drone">Drone Technology</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_textiles" name="sector" value="textiles">
+                            <label for="sector_textiles">Smart Textiles</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="sector_other" name="sector" value="other">
+                            <label for="sector_other">Other emerging areas or of social / national importance</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required">Status of work already carried out (TRL Level)</label>
+                    <div class="trl-options">
+                        <div class="radio-label">
+                            <input type="radio" id="trl0" name="trl" value="TRL 0" required>
+                            <label for="trl0">TRL 0: Idea. Unproven Concept</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="trl1" name="trl" value="TRL 1">
+                            <label for="trl1">TRL 1: Basic Research. Principles postulated</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="trl2" name="trl" value="TRL 2">
+                            <label for="trl2">TRL 2: Technology Formulation. Concept formulated</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="trl3" name="trl" value="TRL 3">
+                            <label for="trl3">TRL 3: Applied Research. First Lab test completed</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="trl4" name="trl" value="TRL 4">
+                            <label for="trl4">TRL 4: Small Scale Prototype built</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="trl5" name="trl" value="TRL 5">
+                            <label for="trl5">TRL 5: Large Scale Prototype tested</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="trl6" name="trl" value="TRL 6">
+                            <label for="trl6">TRL 6: Prototype System tested</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="trl7" name="trl" value="TRL 7">
+                            <label for="trl7">TRL 7: Demonstration System at pre-commercial scale</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="trl8" name="trl" value="TRL 8">
+                            <label for="trl8">TRL 8: First of kind commercial system</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="trl9" name="trl" value="TRL 9">
+                            <label for="trl9">TRL 9: Full Commercial application</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="annexure2_file" class="required">Annexure II: Science and working principle behind the idea (Max 500 words)</label>
+                    <input type="file" id="annexure2_file" name="annexure2_file" class="file-input" accept=".pdf,.doc,.docx" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="annexure3_file" class="required">Annexure III: Final outcome(s) / deliverable(s) of the project (Max 250 words)</label>
+                    <input type="file" id="annexure3_file" name="annexure3_file" class="file-input" accept=".pdf,.doc,.docx" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="annexure4_file" class="required">Annexure IV: Who would be the beneficiary of this innovation and why? (Max 500 words)</label>
+                    <input type="file" id="annexure4_file" name="annexure4_file" class="file-input" accept=".pdf,.doc,.docx" required>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>5. Proposed costs and time frame</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S. No</th>
+                            <th>Items</th>
+                            <th>Own Share (Rs.)</th>
+                            <th>Support sought (Rs.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Charges for R&D/ Design Engg / Consultancy/Testing/Expert cost</td>
+                            <td><input type="number" name="own_share_1" min="0" step="0.01"></td>
+                            <td><input type="number" name="support_sought_1" min="0" step="0.01"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Raw material/ Consumables/Spares</td>
+                            <td><input type="number" name="own_share_2" min="0" step="0.01"></td>
+                            <td><input type="number" name="support_sought_2" min="0" step="0.01"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Fabrication /Synthesis charges of working model or process</td>
+                            <td><input type="number" name="own_share_3" min="0" step="0.01"></td>
+                            <td><input type="number" name="support_sought_3" min="0" step="0.01"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Business Travel and Event participation Fees (Ceiling 5% of approved project cost)</td>
+                            <td><input type="number" name="own_share_4" min="0" step="0.01"></td>
+                            <td><input type="number" name="support_sought_4" min="0" step="0.01"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Patent filing Cost – (PCT- Ceiling 10% of approved project cost)</td>
+                            <td><input type="number" name="own_share_5" min="0" step="0.01"></td>
+                            <td><input type="number" name="support_sought_5" min="0" step="0.01"></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Contingency - (Ceiling 10% of approved project cost)</td>
+                            <td><input type="number" name="own_share_6" min="0" step="0.01"></td>
+                            <td><input type="number" name="support_sought_6" min="0" step="0.01"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="form-group">
+                    <label for="project_period" class="required">Project period in months (Not more than 12 months)</label>
+                    <input type="number" id="project_period" name="project_period" min="1" max="12" required>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>6. Activity details/work plan</h2>
+                <div class="form-group">
+                    <label for="annexure5_file" class="required">Annexure V: Activity details/work plan (Max 500 words)</label>
+                    <p class="form-note">Include project timeline, milestones, and key activities</p>
+                    <input type="file" id="annexure5_file" name="annexure5_file" class="file-input" accept=".pdf,.doc,.docx" required>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>7. Financial Support Information</h2>
+                <div class="form-group">
+                    <label for="annexure6_file" class="required">Annexure VI: Details of financial support sought</label>
+                    <p class="form-note">Provide detailed breakdown of costs with justification</p>
+                    <input type="file" id="annexure6_file" name="annexure6_file" class="file-input" accept=".pdf,.doc,.docx" required>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>8. Previous Experience</h2>
+                <div class="form-group">
+                    <label>Have you received any other funding/grant for this or related project?</label>
+                    <div class="radio-group">
+                        <div class="radio-label">
+                            <input type="radio" id="previous_funding_yes" name="previous_funding" value="yes">
+                            <label for="previous_funding_yes">Yes</label>
+                        </div>
+                        <div class="radio-label">
+                            <input type="radio" id="previous_funding_no" name="previous_funding" value="no">
+                            <label for="previous_funding_no">No</label>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="form-group" id="previous_funding_details" style="display: none;">
+                    <label for="funding_details">If yes, please provide details:</label>
+                    <textarea id="funding_details" name="funding_details"></textarea>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>9. Mentor/Guide Information</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="mentor_name" class="required">Faculty Mentor Name</label>
+                        <input type="text" id="mentor_name" name="mentor_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor_department" class="required">Department</label>
+                        <input type="text" id="mentor_department" name="mentor_department" required>
+                    </div>
+                </div>
+            
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="mentor_email" class="required">Email ID</label>
+                        <input type="email" id="mentor_email" name="mentor_email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor_mobile" class="required">Mobile Number</label>
+                        <input type="number" id="mentor_mobile" name="mentor_mobile" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>10. Declaration</h2>
+                <div class="form-group">
+                    <div class="checkbox-label">
+                        <input type="checkbox" id="declaration" name="declaration" required>
+                        <label for="declaration" class="required">I/We hereby declare that all the information provided in this application is true and correct to the best of my/our knowledge. I/We understand that any false information or misrepresentation may lead to disqualification of my/our application. I/We agree to abide by the rules and regulations of the KEC SPARK FUND program.</label>
+                    </div>
+                </div>
+            
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="applicant_signature" class="required">Applicant's Signature</label>
+                        <input type="file" id="applicant_signature" name="applicant_signature" class="file-input" accept=".jpg,.jpeg,.png,.pdf" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentor_signature" class="required">Faculty Mentor's Signature</label>
+                        <input type="file" id="mentor_signature" name="mentor_signature" class="file-input" accept=".jpg,.jpeg,.png,.pdf" required>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label for="signature_date" class="required">Date</label>
+                    <input type="date" id="signature_date" name="signature_date" required>
+                </div>
+            
+                <div class="btn-container">
+                    <button type="button">Save as Draft</button>
+                    <button type="submit">Submit Application</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <section id="end">
+        <footer>
+            Maintained by TBI@KEC | Designed by CSE-B
+        </footer>
+    </section>
+    <script>
+        //redirect to pages
+        function redir(){
+            window.location.href="{% url 'funds' %}";
+        }
+        function redirhome(){
+            window.location.href="{% url 'home' %}";
+        }
+        function redirinc(){
+            window.location.href="{% url 'incub' %}";
+        }
+        function redirmen(){
+            window.location.href="{% url 'mentor' %}";
+        }
+        function redirproducts(){
+            window.location.href="{% url 'product' %}";
+        }
+        //on scroll border nav
+        window.addEventListener("scroll", function () {
+            const nav = document.querySelector("nav");
+            
+            if (window.scrollY > 50) { // Adjust scroll threshold as needed
+                nav.classList.add("scrolled");
+            } else {
+                nav.classList.remove("scrolled");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+#end {
+    position: fixed; /* Sticks to the bottom of the viewport */
+    bottom: 0; /* Aligns it to the bottom */
+    left: 0;
+    width: 100%; /* Makes it span across the page */
+    background-color: #2659c1; /* Example background color */
+    color: white; /* Text color for contrast */
+    text-align: center; /* Center-align text */
+    padding: 10px 0; /* Add some padding for spacing */
+    z-index: 1000; /* Ensures it stays above other elements */
+}

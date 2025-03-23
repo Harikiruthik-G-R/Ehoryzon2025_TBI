@@ -1,0 +1,460 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEC@TBI</title>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/index.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/footer.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/incubator/inc.css" %}'>
+    <script src="https://kit.fontawesome.com/628c8d2499.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+<body>
+    <div id="logo" onclick="redirhome()">
+        <img src="{% static 'myapp/TBI_LOGO.png' %}" style="width: 100%;height:150px">
+    </div>
+    <nav id="menu">
+        <div class="menu-item">
+            <div class="menu-text">
+                <a href="#">Products</a>
+            </div>
+            <div class="sub-menu" style="height: -10px;">
+                <div class="icon-box" onclick="redirproducts()">
+                    <div class="icon"><i class="fal fa-wind-turbine"></i></div>
+                    <div class="text">
+                        <div class="title">Products Developed / Commercialized <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div class="menu-item highlight">
+            <div class="menu-text">
+                <a href="#">About</a>
+            </div>
+            <div class="sub-menu double">
+                <div class="icon-box gb a" onclick="redirinc()">
+                    <div class="icon"><i class="far fa-question-circle"></i></div>
+                    <div class="text">
+                        <div class="title">Incubation <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">From Professionals</div>
+                    </div>
+                </div>
+                <div class="icon-box gb b" onclick="redirmen()">
+                    <div class="icon"><i class="far fa-users-class"></i></div>
+                    <div class="text">
+                        <div class="title">Mentorship <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">In Classroom</div>
+                    </div>
+                </div>
+                <div class="icon-box gb c">
+                    <div class="icon"><i class="far fa-school"></i></div>
+                    <div class="text">
+                        <div class="title">Infrastructure <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Work</div>
+                    </div>
+                </div>
+                <div class="icon-box gb d" onclick="redir()">
+                    <div class="icon"><i class="far fa-chess-rook"></i></div>
+                    <div class="text">
+                        <div class="title">Spark Fund<i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Funding</div>
+                    </div>
+                </div>
+                <div class="icon-box gb e">
+                    <div class="icon"><i class="far fa-video-plus"></i></div>
+                    <div class="text">
+                        <div class="title">Facilities <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">A Creator Environment</div>
+                    </div>
+                </div>
+                <div class="icon-box gb f">
+                    <div class="icon"><i class="fas fa-info-circle"></i></div>
+                    <div class="text">
+                        <div class="title">About <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Our Journey</div>
+                    </div>
+                </div>
+                <div class="bottom-container">
+                    Ready to dive in? <a href="#" style="margin-right: 80px;">Get Started</a>
+                    <a href="{% url 'home' %}">Home</a>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div class="menu-item highlight">
+            <div class="menu-text">
+                <a href="#">Services</a>
+            </div>
+            <div class="sub-menu triple">
+                <div class="top-container gb c icon-box">
+                    <div class="icon big"><i class="far fa-book"></i></div>
+                    <div class="text">
+                        <div class="title">Where to start</div>
+                        <div class="sub-text">Find out where to begin below</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3>Pre services</h3>
+                    <a href="#">Business Planning and Developmen</a>
+                    <a href="#">Engineering & Design</a>
+                    <a href="#">Testing,Prototype</a>
+                    <a href="#">Packaging of the Concept </a>
+                </div>
+                <div class="box">
+                    <h3>Post Services</h3>
+                    <a href="#">Marketing and Legal Assistance</a>
+                    <a href="#">Assistance for Licences</a>
+                    <a href="#">IPR related issues</a>
+                    <a href="#">Post-incubation services</a>
+                </div>
+                <div class="icon-box flat tp">
+                    <div class="icon"><i class="fal fa-plug"></i></div>
+                    <div class="text">
+                        <div class="title">Career Guide <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat tp">
+                    <div class="icon"><i class="fal fa-comments"></i></div>
+                    <div class="text">
+                        <div class="title">Support Line <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat">
+                    <div class="icon"><i class="fal fa-phone-volume"></i></div>
+                    <div class="text">
+                        <div class="title">Live Chat <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat">
+                    <div class="icon"><i class="fal fa-book-spells"></i></div>
+                    <div class="text">
+                        <div class="title">Documentation <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-text">
+                <a href="#">Community</a>
+            </div>
+            <div class="sub-menu">
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-linkedin"></i></div>
+                    <div class="text">
+                        <div class="title">LinkedIn<i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Join our passionate community.</div>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-twitter-square"></i></div>
+                    <div class="text">
+                        <div class="title">Twitter <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Follow us on twitter.</div>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-facebook-square"></i></i></div>
+                    <div class="text">
+                        <div class="title">Facebook <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">WFollow us on facebook.</div>
+                    </div>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div id="sub-menu-container">
+            <div id="sub-menu-holder">
+                <div id="sub-menu-bottom">
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section id ="tray">
+        hi
+    </section>
+    <section>
+        <main>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+            
+            <div class="container">
+                <section class="section" id="about">
+                    <h2 class="section-title">Intro to Incubation</h2>
+                    <div class="cards-container">
+                        <div class="card" id="card1">
+                            <h3 class="card-title"><i class="fas fa-lightbulb"></i>    What is an Incubator?</h3>
+                            <div class="card-content">
+                                <p>Technology Business Incubation is a dynamic process of business enterprise development. Our incubator nurtures young firms, helping them to survive and grow during the startup period when they are most vulnerable. It speeds up the commercialization of R&D outputs and creates additional avenues of employment.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card" id="card2">
+                            <h3 class="card-title"><i class="fas fa-building"></i>    TBI@KEC</h3>
+                            <div class="card-content">
+                                <ul>
+                                    <li>A pioneering joint venture between Kongu Engineering College and Department of Science and Technology, Government of India</li>
+                                    <li>A prestigious ₹44 million project</li>
+                                    <li>First of its kind in India</li>
+                                    <li>A golden opportunity for entrepreneur aspirants to transform innovative ideas into viable products in emerging technology areas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="section" id="vision-mission">
+                    <h2 class="section-title">Our Vision & Mission</h2>
+                    <div class="vision-mission-container">
+                        <div class="vision-mission-card vision-card" id="vision-card">
+                            <h3 class="vision-mission-title vision-title">Vision</h3>
+                            <div class="vision-mission-content">
+                                <ul>
+                                    <li>To create world-class entrepreneurs in emerging technology areas</li>
+                                    <li>To adapt to the rapidly changing environment and make significant contributions to the nation's growth</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="vision-mission-card mission-card" id="mission-card">
+                            <h3 class="vision-mission-title mission-title">Mission</h3>
+                            <div class="vision-mission-content">
+                                <ul>
+                                    <li>To provide a congenial atmosphere with state-of-the-art infrastructure that encourages entrepreneurs to undertake business development in emerging technologies</li>
+                                    <li>To deliver essential support services needed for sustainable growth of newly developed entrepreneurs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-container" id="stats">
+                        <div class="stat-card">
+                            <div class="stat-number" id="stat1">44</div>
+                            <div class="stat-label">Million ₹ Project</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-number" id="stat2">1st</div>
+                            <div class="stat-label">Of its Kind in India</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-number" id="stat3">50+</div>
+                            <div class="stat-label">Startups Incubated</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-number" id="stat4">200+</div>
+                            <div class="stat-label">Jobs Created</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </section>
+    <section id="end">
+        <footer>
+            Maintained by TBI@KEC | Designed by CSE-B
+        </footer>
+    </section>
+    <script>
+        //on scroll nav
+        window.addEventListener("scroll", function () {
+            const nav = document.querySelector("nav");
+            
+            if (window.scrollY > 50) { // Adjust scroll threshold as needed
+                nav.classList.add("scrolled");
+            } else {
+                nav.classList.remove("scrolled");
+            }
+        });
+        //redir
+        function redir(){
+            window.location.href="{% url 'funds' %}";
+        }
+        function redirhome(){
+            window.location.href="{% url 'home' %}";
+        }
+        function redirinc(){
+            window.location.href="{% url 'incub' %}";
+        }
+        function redirmen(){
+            window.location.href="{% url 'mentor' %}";
+        }
+        function redirproducts(){
+            window.location.href="{% url 'product' %}";
+        }
+        // Initialize GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate floating shapes
+        function animateShapes() {
+            gsap.to(".shape-1", {
+                x: 100,
+                y: 50,
+                rotation: 360,
+                duration: 20,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+            
+            gsap.to(".shape-2", {
+                x: -70,
+                y: -30,
+                rotation: -360,
+                duration: 25,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+            
+            gsap.to(".shape-3", {
+                x: 60,
+                y: 60,
+                rotation: 180,
+                duration: 22,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+        }
+
+        // Animate cards
+        function animateCards() {
+            gsap.from("#card1", {
+                x: -100,
+                opacity: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: "#card1",
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+            
+            gsap.from("#card2", {
+                x: 100,
+                opacity: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: "#card2",
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        }
+
+        // Animate vision and mission cards
+        function animateVisionMission() {
+            gsap.from("#vision-card", {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: "#vision-card",
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+            
+            gsap.from("#mission-card", {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: "#mission-card",
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        }
+
+        // Animate stats
+        function animateStats() {
+            // Counter animation for stats that need counting up
+            gsap.from("#stat1", {
+                innerText: 0,
+                duration: 2,
+                snap: { innerText: 1 },
+                scrollTrigger: {
+                    trigger: "#stats",
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                onUpdate: function() {
+                    document.querySelector("#stat1").innerText = Math.ceil(this.targets()[0].innerText);
+                }
+            });
+
+            gsap.from("#stat3", {
+                innerText: 0,
+                duration: 2,
+                snap: { innerText: 1 },
+                scrollTrigger: {
+                    trigger: "#stats",
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                onUpdate: function() {
+                    document.querySelector("#stat3").innerText = Math.ceil(this.targets()[0].innerText) + "+";
+                }
+            });
+
+            gsap.from("#stat4", {
+                innerText: 0,
+                duration: 2,
+                snap: { innerText: 1 },
+                scrollTrigger: {
+                    trigger: "#stats",
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                onUpdate: function() {
+                    document.querySelector("#stat4").innerText = Math.ceil(this.targets()[0].innerText) + "+";
+                }
+            });
+            
+            // For "1st" which doesn't need counting
+            gsap.from("#stat2", {
+                opacity: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: "#stats",
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+            
+            // Fade in animation for each stat card
+            gsap.from(".stat-card", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: "#stats",
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        }
+
+        // Initialize animations on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            animateShapes();
+            animateCards();
+            animateVisionMission();
+            animateStats();
+        });
+    </script>
+</body>
+</html>

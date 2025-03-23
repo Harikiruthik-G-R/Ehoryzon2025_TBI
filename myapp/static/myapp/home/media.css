@@ -1,0 +1,333 @@
+/* Responsive CSS for smaller screens */
+
+/* Tablets and smaller desktops */
+@media screen and (max-width: 1024px) {
+    :root {
+      --menu-width: 95%;
+    }
+    
+    nav {
+      top: 2em;
+    }
+    
+    #sub-menu-holder {
+      width: 95%;
+    }
+    
+    nav .menu-item:nth-of-type(1):hover ~ #sub-menu-container #sub-menu-holder,
+    nav .menu-item:nth-of-type(2):hover ~ #sub-menu-container #sub-menu-holder,
+    nav .menu-item:nth-of-type(3):hover ~ #sub-menu-container #sub-menu-holder,
+    nav .menu-item:nth-of-type(4):hover ~ #sub-menu-container #sub-menu-holder {
+      left: 2.5%;
+    }
+  }
+  
+  /* Tablets and large phones */
+  @media screen and (max-width: 768px) {
+    :root {
+      --items: 2;
+    }
+    
+    nav {
+      flex-wrap: wrap;
+      height: auto;
+    }
+    
+    nav .menu-item {
+      min-height: 3em;
+    }
+    
+    .menu-item .sub-menu {
+      top: 3em;
+    }
+    
+    .menu-item .sub-menu.double,
+    .menu-item .sub-menu.triple {
+      min-width: 90%;
+      height: auto;
+      grid-template-columns: 100%;
+    }
+    
+    #sub-menu-holder {
+      height: auto;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    
+    .menu-text:after {
+      bottom: -3em;
+    }
+    
+    .menu-item:hover .menu-text:after {
+      bottom: 0.3em;
+    }
+  }
+  
+  /* Mobile phones */
+  @media screen and (max-width: 480px) {
+    :root {
+      --items: 1;
+    }
+    
+    nav {
+      height: auto;
+    }
+    
+    nav .menu-item {
+      padding: 0.8em 1em;
+    }
+    
+    .menu-item .sub-menu {
+      min-width: 100%;
+      margin-left: 0;
+    }
+    
+    #sub-menu-holder {
+      transform-origin: 50% 5em 0em;
+    }
+    
+    .menu-item .icon-box {
+      height: auto;
+    }
+    
+    .menu-item .icon-box.space {
+      margin-bottom: 0.8em;
+    }
+    
+    nav .menu-item:nth-of-type(1):hover ~ #sub-menu-container #sub-menu-holder,
+    nav .menu-item:nth-of-type(2):hover ~ #sub-menu-container #sub-menu-holder,
+    nav .menu-item:nth-of-type(3):hover ~ #sub-menu-container #sub-menu-holder,
+    nav .menu-item:nth-of-type(4):hover ~ #sub-menu-container #sub-menu-holder {
+      clip-path: inset(0 0 0 0 round 10px);
+      left: 0;
+    }
+    
+    .bottom-container a {
+      position: relative;
+      right: 0;
+      bottom: 0;
+      margin-top: 1em;
+    }
+  }
+  
+  /* Adjust for very small screens */
+  @media screen and (max-width: 320px) {
+    .menu-item .sub-menu,
+    .menu-item .sub-menu.double,
+    .menu-item .sub-menu.triple {
+      padding: 1em;
+    }
+    
+    .menu-item .text {
+      font-size: 0.9em;
+    }
+    
+    .menu-item .icon {
+      font-size: 1em;
+    }
+  }
+  /* Responsive CSS for main content, cube, and other elements */
+
+@media screen and (max-width: 1200px) {
+    main #cube {
+      position: relative;
+      right: auto;
+      margin: 0 auto;
+    }
+    
+    .side-message {
+      position: relative;
+      right: auto;
+      margin: 20px auto;
+      transform: none;
+      opacity: 0;
+      max-width: 90%;
+      white-space: normal;
+      padding: 15px;
+    }
+    
+    /* Adjust stats section positioning */
+    #stat {
+      position: relative;
+      right: auto;
+      margin: 30px auto;
+      width: 90%;
+      max-width: 650px;
+    }
+    
+    #stat img {
+      width: 100%;
+      height: auto;
+      max-height: 450px;
+      object-fit: contain;
+    }
+    
+    /* Adjust sidebar and eventbar */
+    #sidebar, #main_2 #eventbar {
+      float: none;
+      width: 100%;
+      max-width: 250px;
+      margin: 20px auto;
+      border-radius: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    /* Adjust cube size */
+    .cube-container {
+      width: 12em;
+      height: 12em;
+      margin: 20px auto;
+    }
+    
+    .cube-side:nth-child(1),
+    .cube-side:nth-child(2),
+    .cube-side:nth-child(3),
+    .cube-side:nth-child(4),
+    .cube-side:nth-child(5),
+    .cube-side:nth-child(6) {
+      transform-origin: center;
+    }
+    
+    .cube-side:nth-child(1) { transform: rotateY(0deg) translateZ(6em); }
+    .cube-side:nth-child(2) { transform: rotateY(90deg) translateZ(6em); }
+    .cube-side:nth-child(3) { transform: rotateY(180deg) translateZ(6em); }
+    .cube-side:nth-child(4) { transform: rotateY(-90deg) translateZ(6em); }
+    .cube-side:nth-child(5) { transform: rotateX(-90deg) translateZ(6em); }
+    .cube-side:nth-child(6) { transform: rotateX(90deg) translateZ(6em); }
+    
+    /* Partners carousel adjustments */
+    #patners #contentContainer {
+      width: 300px;
+      height: 250px;
+    }
+    
+    .carouselItem {
+      width: 150px;
+      height: 120px;
+      margin-left: -75px;
+      margin-top: -60px;
+    }
+    
+    .carouselItemInner {
+      width: 230px;
+      height: 120px;
+      margin-left: -75px;
+      margin-top: -60px;
+    }
+    
+    /* Main sections height adjustments */
+    main, #main_2 {
+      height: auto;
+      min-height: 300px;
+      margin-bottom: 50px;
+    }
+    
+    /* Brutalist button adjustments */
+    .brutalist-button {
+      width: 150px;
+      height: 50px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    main, #main_2 {
+      padding: 20px;
+    }
+    
+    #stat {
+      height: auto;
+      min-height: 300px;
+    }
+    
+    .eb, #sitems {
+      gap: 20px;
+    }
+    
+    /* Flex container for better mobile layout */
+    #main_2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    /* Partners section */
+    #patners {
+      height: auto;
+      min-height: 250px;
+      padding: 30px 0;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Smaller cube for mobile */
+    .cube-container {
+      width: 10em;
+      height: 10em;
+    }
+    
+    .cube-side:nth-child(1) { transform: rotateY(0deg) translateZ(5em); }
+    .cube-side:nth-child(2) { transform: rotateY(90deg) translateZ(5em); }
+    .cube-side:nth-child(3) { transform: rotateY(180deg) translateZ(5em); }
+    .cube-side:nth-child(4) { transform: rotateY(-90deg) translateZ(5em); }
+    .cube-side:nth-child(5) { transform: rotateX(-90deg) translateZ(5em); }
+    .cube-side:nth-child(6) { transform: rotateX(90deg) translateZ(5em); }
+    
+    /* Button adjustments for mobile */
+    .brutalist-button {
+      width: 130px;
+      height: 45px;
+    }
+    
+    .button-text span:first-child {
+      font-size: 9px;
+    }
+    
+    .button-text span:last-child {
+      font-size: 14px;
+    }
+    
+    /* Side message in mobile view */
+    .side-message {
+      font-size: 1em;
+      padding: 10px;
+    }
+    
+    /* Partners carousel for smaller screens */
+    #patners #contentContainer {
+      width: 250px;
+      height: 200px;
+    }
+    
+    .carouselItem, .carouselItemInner {
+      width: 120px;
+      height: 100px;
+      margin-left: -60px;
+      margin-top: -50px;
+    }
+    
+    .carouselItemInner {
+      width: 180px;
+    }
+  }
+  
+  /* Make sure radio buttons remain functional */
+  @media screen and (max-width: 992px) {
+    .radio-button:nth-child(1):checked ~ .message-1,
+    .radio-button:nth-child(2):checked ~ .message-2,
+    .radio-button:nth-child(3):checked ~ .message-3,
+    .radio-button:nth-child(4):checked ~ .message-4,
+    .radio-button:nth-child(5):checked ~ .message-5,
+    .radio-button:nth-child(6):checked ~ .message-6 {
+      opacity: 1;
+      transform: none;
+      display: block;
+    }
+  }
+  
+  /* Additional transitions for smoother mobile experience */
+  @media screen and (max-width: 768px) {
+    main, #main_2 {
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+  }

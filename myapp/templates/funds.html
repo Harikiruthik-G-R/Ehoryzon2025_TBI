@@ -1,0 +1,326 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEC@TBI</title>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/index.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/home/footer.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "myapp/funds/funds.css" %}'>
+    <script src="https://kit.fontawesome.com/628c8d2499.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="logo" onclick="redirhome()">
+        <img src="{% static 'myapp/TBI_LOGO.png' %}" style="width: 100%;height:150px">
+    </div>
+    <nav id="menu">
+        <div class="menu-item">
+            <div class="menu-text">
+                <a href="#">Products</a>
+            </div>
+            <div class="sub-menu" style="height: -10px;">
+                <div class="icon-box" onclick="redirproducts()">
+                    <div class="icon"><i class="fal fa-wind-turbine"></i></div>
+                    <div class="text">
+                        <div class="title">Products Developed / Commercialized <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div class="menu-item highlight">
+            <div class="menu-text">
+                <a href="#">About</a>
+            </div>
+            <div class="sub-menu double">
+                <div class="icon-box gb a" onclick="redirinc()">
+                    <div class="icon"><i class="far fa-question-circle"></i></div>
+                    <div class="text">
+                        <div class="title">Incubation <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">From Professionals</div>
+                    </div>
+                </div>
+                <div class="icon-box gb b" onclick="redirmen()">
+                    <div class="icon"><i class="far fa-users-class"></i></div>
+                    <div class="text">
+                        <div class="title">Mentorship <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">In Classroom</div>
+                    </div>
+                </div>
+                <div class="icon-box gb c">
+                    <div class="icon"><i class="far fa-school"></i></div>
+                    <div class="text">
+                        <div class="title">Infrastructure <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Work</div>
+                    </div>
+                </div>
+                <div class="icon-box gb d" onclick="redir()">
+                    <div class="icon"><i class="far fa-chess-rook"></i></div>
+                    <div class="text">
+                        <div class="title">Spark Fund<i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Funding</div>
+                    </div>
+                </div>
+                <div class="icon-box gb e">
+                    <div class="icon"><i class="far fa-video-plus"></i></div>
+                    <div class="text">
+                        <div class="title">Facilities <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">A Creator Environment</div>
+                    </div>
+                </div>
+                <div class="icon-box gb f">
+                    <div class="icon"><i class="fas fa-info-circle"></i></div>
+                    <div class="text">
+                        <div class="title">About <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Our Journey</div>
+                    </div>
+                </div>
+                <div class="bottom-container">
+                    Ready to dive in? <a href="#" style="margin-right: 80px;">Get Started</a>
+                    <a href="{% url 'home' %}">Home</a>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div class="menu-item highlight">
+            <div class="menu-text">
+                <a href="#">Services</a>
+            </div>
+            <div class="sub-menu triple">
+                <div class="top-container gb c icon-box">
+                    <div class="icon big"><i class="far fa-book"></i></div>
+                    <div class="text">
+                        <div class="title">Where to start</div>
+                        <div class="sub-text">Find out where to begin below</div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3>Pre services</h3>
+                    <a href="#">Business Planning and Developmen</a>
+                    <a href="#">Engineering & Design</a>
+                    <a href="#">Testing,Prototype</a>
+                    <a href="#">Packaging of the Concept </a>
+                </div>
+                <div class="box">
+                    <h3>Post Services</h3>
+                    <a href="#">Marketing and Legal Assistance</a>
+                    <a href="#">Assistance for Licences</a>
+                    <a href="#">IPR related issues</a>
+                    <a href="#">Post-incubation services</a>
+                </div>
+                <div class="icon-box flat tp">
+                    <div class="icon"><i class="fal fa-plug"></i></div>
+                    <div class="text">
+                        <div class="title">Career Guide <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat tp">
+                    <div class="icon"><i class="fal fa-comments"></i></div>
+                    <div class="text">
+                        <div class="title">Support Line <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat">
+                    <div class="icon"><i class="fal fa-phone-volume"></i></div>
+                    <div class="text">
+                        <div class="title">Live Chat <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="icon-box flat">
+                    <div class="icon"><i class="fal fa-book-spells"></i></div>
+                    <div class="text">
+                        <div class="title">Documentation <i class="far fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="menu-text">
+                <a href="#">Community</a>
+            </div>
+            <div class="sub-menu">
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-linkedin"></i></div>
+                    <div class="text">
+                        <div class="title">LinkedIn<i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Join our passionate community.</div>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-twitter-square"></i></div>
+                    <div class="text">
+                        <div class="title">Twitter <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">Follow us on twitter.</div>
+                    </div>
+                </div>
+                <div class="icon-box">
+                    <div class="icon"><i class="fab fa-facebook-square"></i></i></div>
+                    <div class="text">
+                        <div class="title">Facebook <i class="far fa-arrow-right"></i></div>
+                        <div class="sub-text">WFollow us on facebook.</div>
+                    </div>
+                </div>
+                <div class="sub-menu-holder"></div>
+            </div>
+        </div>
+        <div id="sub-menu-container">
+            <div id="sub-menu-holder">
+                <div id="sub-menu-bottom">
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section id ="tray">
+        hi
+    </section>
+    <section id="funds">
+        <main>
+            <div class="container">
+                <h1>Spark Fund Guidelines</h1>
+                
+                <div class="section" id="section1">
+                    <h2><i class="fas fa-file-invoice-dollar"></i>     Proposal Raising</h2>
+                    <div class="guidelines">
+                        <div class="guideline-item">Once the spark fund is granted, mentors need to raise proposal and can receive funds by submitting an advance money form at the KEC office (with all supporting documents).</div>
+                        <div class="guideline-item">30-50% amount of sanctioned amount can only be raised as advance money.</div>
+                        <div class="guideline-item">Mentor is entirely responsible for finance-related matters.</div>
+                        <div class="guideline-item">It's recommended to start purchasing after the Proposal is raised for the project.</div>
+                    </div>
+                </div>
+                
+                <div class="section" id="section2">
+                    <h2><i class="fas fa-receipt"></i>     Bill Settlement and Component Registration</h2>
+                    <div class="guidelines">
+                        <div class="guideline-item">Bills must be dated after the project sanctioned/proposal raised date (Date after the principal signs).</div>
+                        <div class="guideline-item">Bills have to be raised in the name of principal, Kongu Engineering College, Perundurai, Erode.</div>
+                        <div class="guideline-item">GST invoice (with Date, Sign, and seal) is preferred.</div>
+                        <div class="guideline-item">If any bill without GST is claimed, it needs proper clarification and committee approval, (Only for lathwork or any similar nonstandard works.)</div>
+                        <div class="guideline-item">Bill settlements can be done only after committee approval (After the demo and millstones are achieved).</div>
+                        <div class="guideline-item">A copy of all documents has to be maintained.</div>
+                        <div class="guideline-item">Partial bill settlement may be permitted as per committee approval and work satisfaction.</div>
+                        <div class="guideline-item">Before final bill settlement, the mentor needs to provide the utilization certificate (refer to Section III – UC and Final Report) and evidence for milestone achievements such as patents, copy rights, awards or anything similar.</div>
+                        <div class="guideline-item">Before final bill settlement, all the purchased items need to be recorded in the research/project cubicle lab register book and signed, similar to the lab purchase procedure.</div>
+                    </div>
+                </div>
+                
+                <div class="section" id="section3">
+                    <h2><i class="fas fa-file-alt"></i>     Utilization Certificate and Final Report</h2>
+                    <div class="guidelines">
+                        <div class="guideline-item">After submission of the Utilization Certificate (UC), only final bill settlement is permitted.</div>
+                        <div class="guideline-item">Mentors need to provide UC in the given format.</div>
+                        <div class="guideline-subitem">Font: Times New Roman, Font Size: Title: 18 pt, Headings: 14 pt, Para: 12 pt, spacing: 1, Tables and figures must be named properly.</div>
+                        <div class="guideline-subitem">Paper Size: A4, Border: Yes</div>
+                        <div class="guideline-subitem">Footer: Spark Fund, Page Number, Project ID.</div>
+                        <div class="guideline-subitem">1st Page: Project Title, Project Duration and Details, Details of Students Involved, Budget Utilization, Milestones Achieved</div>
+                        <div class="guideline-subitem">2nd Page: Problem Statement, Objective, Proposed Method</div>
+                        <div class="guideline-subitem">3rd Page: Block Diagram of Executed Work, Solutions, Fund Utilization and Details, Output Photos (Minimum 3 to 4 photos)</div>
+                        <div class="guideline-subitem">Last Page: Outcomes with Evidence</div>
+                    </div>
+                </div>
+                
+                <div class="section" id="section4">
+                    <h2><i class="fas fa-users"></i>     Change in Team Members / Mentor</h2>
+                    <div class="guidelines">
+                        <div class="guideline-item">If mentors need to change student innovators or alter the team in any given case, such as students who have gone on internships, placements, graduated, or student work that is not satisfactory, they can do so after notifying to the committee.</div>
+                        <div class="guideline-item">If there is a need to change mentors, the committee has the right to take a decision.</div>
+                        <div class="guideline-item">If any above team must submit the form given below. (Refer: Spark Fund – Member/Mentor Change Form)</div>
+                    </div>
+                </div>
+                
+                <div class="section" id="section5">
+                    <h2><i class="fas fa-clipboard-list"></i>     Other Important Conditions</h2>
+                    <div class="guidelines">
+                        <div class="guideline-item">Projects must be in TRL 3 levels (Refer below figure 1.) and final milestone should be a patent/product/copy right/ technology transfer, if not application will be rejected.</div>
+                        <div class="guideline-item">If funds are not properly utilized / milestones are not met / very slow or no work progress is made / or any other issues arise, the committee has all the rights to cancel funding at any time.</div>
+                        <div class="guideline-item">Mentor and students must present all the review monthly, without fail and must follow the committee's insights.</div>
+                        <div class="guideline-item">Patents or copy rights need to be filled out with respect to the KEC procedure for IPR filing.</div>
+                        <div class="guideline-item">If a patent or copyright has to be transferred to the person involved in the work or any other firm, or if you want to tech-transfer or any other form of similar work, KEC norms must be followed.</div>
+                        <div class="guideline-item">All the conditions and norms may be changed without notice and adapted as per KEC's new norms and regulations. (Now & this when new norms are implemented)</div>
+                    </div>
+                    
+                    <h3>Technology Readiness Level (TRL) Scale</h3>
+                    <div class="tooltip">What is TRL? <span class="tooltiptext">Technology Readiness Level (TRL) is a method for estimating the maturity of technologies during the acquisition phase of a program.</span></div>
+                    <img src="/api/placeholder/800/400" alt="Technology Readiness Level Scale" class="trl-image">
+                    
+                    <div class="important-note">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Important Note</h3>
+                        <p>Projects must be at least at TRL 3 level to be eligible for Spark Fund. The final milestone should be a patent, product, copyright, or technology transfer.</p>
+                    </div>
+                </div>
+                <div class="bt">
+                    <center><button onclick="redirform()">Apply Now</button></center>
+                </div>
+                <div class="section" id="section6">
+                    <div class="help-box">
+                        <h3><i class="fas fa-question-circle"></i> Need Assistance?</h3>
+                        <p>For any queries regarding Spark Fund Guidelines or application process, please contact the KEC office.</p>
+                        <a href="#" class="btn">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+        </main>    
+    </section>
+    <section id="end">
+        <footer>
+            Maintained by TBI@KEC | Designed by CSE-B
+        </footer>
+    </section>
+    <script>
+        window.addEventListener("scroll", function () {
+            const nav = document.querySelector("nav");
+            
+            if (window.scrollY > 50) { // Adjust scroll threshold as needed
+                nav.classList.add("scrolled");
+            } else {
+                nav.classList.remove("scrolled");
+            }
+        });
+        //redir
+        function redir(){
+            window.location.href="{% url 'funds' %}";
+        }
+        function redirhome(){
+            window.location.href="{% url 'home' %}";
+        }
+        function redirinc(){
+            window.location.href="{% url 'incub' %}";
+        }
+        function redirmen(){
+            window.location.href="{% url 'mentor' %}";
+        }
+        function redirproducts(){
+            window.location.href="{% url 'product' %}";
+        }
+        function redirform(){
+            window.location.href="{% url 'form' %}"
+        }
+         // Scroll animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            
+            function checkVisibility() {
+                const windowHeight = window.innerHeight;
+                
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const isVisible = (rect.top <= windowHeight * 0.8 && rect.bottom >= 0);
+                    
+                    if (isVisible) {
+                        section.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Initial check
+            checkVisibility();
+            
+            // Check on scroll
+            window.addEventListener('scroll', checkVisibility);
+        });
+    </script>
+</body>
+</html>

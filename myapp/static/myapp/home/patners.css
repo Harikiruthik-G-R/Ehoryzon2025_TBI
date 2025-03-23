@@ -1,0 +1,66 @@
+#patners{
+    background-color: #ffffff; 
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #16336D;
+    flex-direction: column;
+    padding: 50px 0;
+    overflow: hidden;
+    position: relative;
+    margin-top: 90px;
+ }
+ 
+ #patners h1 {
+    margin-bottom: 20px;
+ }
+ 
+ #patners .trans3d {
+     -webkit-transform-style: preserve-3d;
+     -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform-style: preserve-3d;
+     -moz-transform: translate3d(0, 0, 0);
+     -ms-transform-style:preserve-3d;
+     -ms-transform: translate3d(0, 0, 0);
+     transform-style:preserve-3d;
+     transform: translate3d(0, 0, 0);
+ }
+ 
+ #patners #contentContainer {
+     position: relative;
+     width: 400px;  /* Reduced from 500px */
+     height: 300px; /* Reduced from 500px */
+     margin: 0 auto;
+ }
+ 
+ #patners .carouselItem {
+     width: 200px;   /* Reduced from 520px */
+     height: 150px;  /* Reduced from 230px */
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     margin-left: -100px; /* Half of width */
+     margin-top: -75px;   /* Half of height */
+     visibility: hidden;
+ }
+ 
+ #patners .carouselItemInner {
+     width: 300px;   /* Reduced from 620px */
+     height: 150px;  /* Reduced from 230px */
+     position: absolute;
+     background-color: transparent;
+     left: 50%;
+     top: 50%;
+     margin-left: -100px; /* Half of width */
+     margin-top: -75px;   /* Half of height */
+     text-align: center;
+     padding: 10px;
+ }
+ 
+ .carouselItemInner img {
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+     border-radius: 90px;
+ }

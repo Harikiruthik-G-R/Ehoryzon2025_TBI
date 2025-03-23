@@ -1,0 +1,209 @@
+.newspaper-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1500px;
+}
+
+.book {
+    width: 90vw;
+    max-width: 1200px;
+    height: 85vh;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.page {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    background-color: #fff;
+    transform-origin: left center;
+    transition: transform 1s ease-in-out;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.page-content {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.page-number {
+    position: absolute;
+    bottom: 10px;
+    font-style: italic;
+    color: #888;
+}
+
+.odd .page-number {
+    right: 30px;
+}
+
+.even .page-number {
+    left: 30px;
+}
+
+.newspaper-header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+.newspaper-title {
+    font-size: 42px;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Arial Black', 'Arial Bold', sans-serif;
+}
+
+.newspaper-date {
+    font-style: italic;
+    margin: 5px 0;
+}
+
+.headline {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subheadline {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.article-content {
+    column-count: 2;
+    column-gap: 20px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.article-image {
+    width: 100%;
+    height: 300px;
+    margin: 15px 0;
+    display: block;
+    background-color: #eee;
+    border: 1px solid #ddd;
+}
+
+.image-caption {
+    font-size: 14px;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.nav-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 100;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #555;
+}
+
+.nav-btn:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+.page-indicator {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Page flip animation effect */
+.page.flipped {
+    transform: rotateY(-180deg);
+}
+
+.page.even {
+    transform-origin: right center;
+}
+
+.page.even.flipped {
+    transform: rotateY(180deg);
+}
+
+.vision-mission {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 15px 0;
+    border-left: 4px solid #333;
+}
+
+.feature-list {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.feature-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.feature-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.image-placeholder {
+    width: 80%;
+    height: 60%;
+    margin: 30px auto;
+    background-color: #eee;
+    border: 1px dashed #999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.caption-space {
+    width: 80%;
+    height: 40px;
+    margin: 10px auto;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    font-style: italic;
+    color: #777;
+}
